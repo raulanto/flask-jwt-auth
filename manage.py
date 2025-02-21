@@ -6,7 +6,7 @@ import unittest
 import coverage
 
 from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
+from flask_migrate import Migrate
 
 COV = coverage.coverage(
     branch=True,
@@ -25,7 +25,7 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 
 # migrations
-manager.add_command('db', MigrateCommand)
+# manager.add_command('db', MigrateCommand)
 
 
 @manager.command
